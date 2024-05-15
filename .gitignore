@@ -1,3 +1,5 @@
 /DockerWasm/bin
 /DockerWasm/obj
 /DockerWasm/pub
+
+/kapa-dot-dev-v2
