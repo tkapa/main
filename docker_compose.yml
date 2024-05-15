@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  blazor_app:
+    build: 
+      context: ./DockerWasm
+    ports:
+      - '81:80'
