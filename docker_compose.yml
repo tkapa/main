@@ -6,3 +6,8 @@ services:
       context: ./DockerWasm
     ports:
       - '81:80'
+  kapa_dev:
+    build: 
+      context: ./kapa-dot-dev-v2
+    ports:
+      - '80:80'
