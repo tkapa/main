@@ -6,8 +6,22 @@ services:
       context: ./DockerWasm
     ports:
       - '81:80'
+    networks:
+      main:
+        aliases:
+          - blazor_app
+
   kapa_dev:
     build: 
       context: ./kapa-dot-dev-v2
     ports:
       - '80:80'
+    volumes:
+      - ./blazorproxy.com:/etc/nginx/conf.d/blazorproxy.conf
+    networks:
+      main:
+        aliases:
+          - kapa_dev
+
+networks:
+  main:
