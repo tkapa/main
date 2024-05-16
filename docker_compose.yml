@@ -9,7 +9,7 @@ services:
     networks:
       main:
         aliases:
-          - blazor_app
+          - blazor
 
   kapa_dev:
     build: 
@@ -17,11 +17,11 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./blazorproxy.com:/etc/nginx/conf.d/blazorproxy.conf
+      - ./blazorproxy.conf:/etc/nginx/conf.d/blazorproxy.conf
     networks:
       main:
         aliases:
-          - kapa_dev
+          - kapa
 
 networks:
   main:
