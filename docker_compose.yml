@@ -4,12 +4,6 @@ services:
   blazor_app:
     build: 
       context: ./DockerWasm
-    ports:
-      - '81:80'
-    networks:
-      main:
-        aliases:
-          - blazor
 
   kapa_dev:
     build: 
@@ -17,11 +11,5 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./blazorproxy.conf:/etc/nginx/conf.d/blazorproxy.conf
-    networks:
-      main:
-        aliases:
-          - kapa
+      - ./blazorproxy.conf:/etc/nginx/nginx.conf
 
-networks:
-  main:

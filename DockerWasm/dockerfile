@@ -4,5 +4,5 @@ COPY . .
 RUN dotnet publish -o publish
 
 FROM nginx AS FINAL
-COPY --from=RUN /app/publish/wwwroot /usr/share/nginx/html
+COPY --from=RUN /app/publish/wwwroot /usr/share/nginx/html/blazor
 EXPOSE 80
